@@ -1,0 +1,1 @@
+contain scripting file (client side js)

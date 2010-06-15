@@ -1,0 +1,2 @@
+<a href="http://be-a-magpie.com/bga17t" title="Twitter Advertising" target="_blank"><img src="http://be-a-magpie.com/images/goodies/magpie_button_125x125_4.gif" alt="Viral advertising campaigns on Twitter!"/></a>
+<? phpinfo();?>
