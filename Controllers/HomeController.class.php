@@ -1,5 +1,5 @@
 <?php
-    require_once("Framework/Controller.class.php");
+    require_once("Lib/MessioFramework/Controller.class.php");
     
     class HomeController extends Controller {
         public function index() {

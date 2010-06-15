@@ -1,5 +1,5 @@
 <?php
-    require_once("Framework/Model.class.php");
+    require_once("Lib/MessioFramework/Model.class.php");
 
     class AlbumModel extends Model {
         public function newAlbum($album) {

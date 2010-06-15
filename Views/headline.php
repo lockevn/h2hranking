@@ -1,5 +1,5 @@
 ﻿<? 
-    require_once("Framework/ViewHelper.class.php");
+    require_once("Lib/MessioFramework/ViewHelper.class.php");
     
     $helper = new ViewHelper();
     $events = $helper->getComingEvents();

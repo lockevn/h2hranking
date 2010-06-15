@@ -1,6 +1,6 @@
 <?php
-    require_once("Framework/Controller.class.php");
-    require_once("Framework/AjaxPostResult.class.php");
+    require_once("Lib/MessioFramework/Controller.class.php");
+    require_once("Lib/MessioFramework/AjaxPostResult.class.php");
     require_once("Models/AlbumModel.class.php");
     
     class AlbumController extends Controller {

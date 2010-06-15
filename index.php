@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once("Framework/RequestHandler.class.php");
+    require_once("Lib/MessioFramework/RequestHandler.class.php");
     
     $requestHandler = new RequestHandler("");
     $requestHandler->dispatch();
