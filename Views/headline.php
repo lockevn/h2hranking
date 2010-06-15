@@ -1,4 +1,4 @@
-﻿<? 
+<? 
     require_once("Lib/MessioFramework/ViewHelper.class.php");
     
     $helper = new ViewHelper();
