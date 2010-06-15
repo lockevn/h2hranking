@@ -1,20 +1,21 @@
-<?php 
-
-/**
-* @desc return the parameter value, with mysql_espace. Avoid SQL Injection.
-* @param parameter name
-* @return string value of the param
-*/
-function GetParamSafe($paramName)
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/config.php");
+class URLParamHelper
 {
-	$str = $_REQUEST[$paramName];
-	// now client has to urlencode '+' as %2B before submiting to API.
-	//$str = str_replace('+','%2B',$str);
-	if(!empty($str) && !get_magic_quotes_gpc())
+	/**
+	* @desc return the parameter value, with mysql_espace. Avoid SQL Injection.
+	* @param parameter name
+	* @return string value of the param
+	*/
+	public static function GetParamSafe($paramName)
 	{
-		$str = addslashes($str);
+		$str = $_REQUEST[$paramName];
+		// now client has to urlencode '+' as %2B before submiting to API.
+		//$str = str_replace('+','%2B',$str);
+		if(!empty($str) && !get_magic_quotes_gpc())
+		{
+			$str = addslashes($str);
+		}
+		return $str;
 	}
-	return $str;
 }
-
 ?>

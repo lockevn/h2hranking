@@ -36,5 +36,11 @@ class TournamentDTO {
 	 */
 	public $Desc;
 
+	function __construct($arg){
+         $this->Name = "Test Name $arg";
+		 $this->Type = "Test Type $arg";
+		 $this->Multiply = "Test Multiply $arg";
+		 $this->Desc = "Test Desc $arg";
+    }
 }
 ?>

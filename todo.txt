@@ -1,0 +1,8 @@
+TODO:
+- Login/Phan quyen (done)
+- Hien thi 5 latest posts ben trai (done)
+- Hien thi su kien tren header
+- Post su kien (low)
+- Re-test
+- Dang ky host + domain
+- Deploy

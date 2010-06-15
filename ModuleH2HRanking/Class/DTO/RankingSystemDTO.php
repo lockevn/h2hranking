@@ -23,5 +23,8 @@ class RankingSystemDTO {
 	 * : player có thứ hạng thấp hơn chiến thắng, đổi chỗ rank cho nhau (VD player A có rank 5, đấu với player B có rank 2, nếu player A thắng, anh có rank mới là 2 và player B bị đánh tụt xuống rank 5).
 	 */
 	const OPTION_SWAP_RANK = false;
+
+	public $Name;
+	public $Desc;
 }
 ?>

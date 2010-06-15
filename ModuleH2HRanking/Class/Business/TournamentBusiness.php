@@ -1,8 +1,5 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once(ABSPATH."ModuleH2HRanking/Class/DTO/TournamentDTO.php");
 
 /**
  * Description of TournamentBusiness
@@ -40,6 +37,10 @@ class TournamentBusiness {
 	 */
 	function GetTournamentList(RankingSystemDTO $rsystem)
 	{
+		$e1 = new TournamentDTO(1);
+		$e2 = new TournamentDTO(2);
+		$arrret = array($e1, $e2);
+		return $arrret;
 	}
 
 	/**

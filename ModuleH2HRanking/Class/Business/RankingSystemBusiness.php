@@ -1,8 +1,6 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once(ABSPATH."ModuleH2HRanking/Class/DTO/RankingSystemDTO.php");
+
 
 /**
  * Description of RankingSystem
@@ -10,7 +8,14 @@
  * @author ngng
  */
 class RankingSystemBusiness {
-    //put your code here
+
+	function GetByID($id)
+	{
+		$ret = new RankingSystemDTO();
+		$ret->Name = 'Test name';
+		$ret->Desc = 'Test desc';
+		return $ret;
+	}
 
 	/**
 	 * list of player and rank in this ranking system
