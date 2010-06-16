@@ -8,8 +8,8 @@ class TournamentModel extends Model {
 	 * @param <type> $user
 	 * @return <type> 
 	 */
-	public function create($user) {
-		$sql = "SELECT Count(UserID) FROM tblUser WHERE Username='" . $this->formatString($user["Username"]) . "'";
+	public function create(TournamentDTO $dto) {
+		$sql = "SELECT Count(UserID) FROM ".CONFIG::$db_prefix ." WHERE Username='" . $this->formatString($user["Username"]) . "'";
 		$count = $this->executeSqlScalar($sql);
 		if ($count > 0) 
 			return false;

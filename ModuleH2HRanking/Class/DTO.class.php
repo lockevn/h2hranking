@@ -1,6 +1,8 @@
 <?php
 
-class TournamentDTO {
+require_once "../../Lib/MessioFramework/DTObase.class.php";
+
+class TournamentDTO extends DTObase {
     //put your code here
 
 	/**
@@ -26,17 +28,10 @@ class TournamentDTO {
 	 * @var <type>
 	 */
 	public $Desc;
-
-	function __construct($arg){
-         $this->Name = "Test Name $arg";
-		 $this->Type = "Test Type $arg";
-		 $this->Multiply = "Test Multiply $arg";
-		 $this->Desc = "Test Desc $arg";
-    }
 }
 
-class RankingSystemDTO {
-    //put your code here
+class RankingSystemDTO extends DTObase  {
+    
 	/**
 	 * đấu thủ được phép thách đấu (challenge) người có rank trong khoảng rank +-3 (VD: player A xếp thứ 5, anh được phép thách đấu với player xếp hạng 4 3 2 (có option cho bật tắt chế độ này,
 	 */
@@ -48,10 +43,12 @@ class RankingSystemDTO {
 
 	public $Name;
 	public $Desc;
+
+	
 }
 
-class PlayerDTO {
-
+class PlayerDTO extends DTObase  {
+	
 	/**
 	 *
 	 * This user belong to with UserSystem? vntennis, google
@@ -70,8 +67,7 @@ class PlayerDTO {
 
 }
 
-class MatchDTO {
-    //put your code here
+class MatchDTO extends DTObase  {
 
 	/**
 	 * State = "waiting", "completed"
@@ -113,13 +109,13 @@ class MatchDTO {
 
 }
 
-class FeedEntryDTO {
+class FeedEntryDTO extends DTObase  {
 
 	public $Title;
 	public $Body;
 }
 
-class ClubDTO {
+class ClubDTO extends DTObase  {
     public $Name;
 	public $Leader;
 }
