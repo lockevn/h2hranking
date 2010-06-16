@@ -10,6 +10,8 @@
  * @author ngng
  */
 class DTObase {
-    public $tablename;
+    public $_tablename;
+	
+	public $ID;
 }
 ?>

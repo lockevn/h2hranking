@@ -5,38 +5,48 @@ class TournamentModel extends Model {
 
 	/**
 	 *
-	 * @param <type> $user
+	 * @param <type> $dto
 	 * @return <type> 
 	 */
 	public function create(TournamentDTO $dto) {
-		$sql = "SELECT Count(UserID) FROM ".CONFIG::$db_prefix ." WHERE Username='" . $this->formatString($user["Username"]) . "'";
+		$sql = "SELECT Count(id) FROM " .CONFIG::$db_prefix.$dto->_tablename.
+				" WHERE id=" . $this->formatString($dto->ID);
 		$count = $this->executeSqlScalar($sql);
 		if ($count > 0) 
 			return false;
-
 		
-		$sql = "INSERT INTO tblUser " .
-			   "(Username, Password, FullName, Birthday, Class, Avatar, Description, Address, Email, Work, Mobile, Phone, YahooID, IsAdmin, Status) " .
+		$sql = "INSERT INTO  " .
+
+			   "(name, desc, type, multiply) " .
+					CONFIG::$db_prefix.$dto->_tablename.
 			   "VALUES (" .
-			   "'" . $this->formatString($user["Username"]) . "'," .
-			   "'" . md5($user["Password"]) . "'," .
-			   "'" . $this->formatString($user["FullName"]) . "'," .
-			   "'" . $this->formatString(date("Y-m-d", strtotime($user["Birthday"]))) . "'," .
-			   $this->formatString($user["Class"]) . "," .
-			   "'" . $this->formatString($user["Avatar"]) . "'," .
-			   "'" . $this->formatString($user["Description"]) . "'," .
-			   "'" . $this->formatString($user["Address"]) . "'," .
-			   "'" . $this->formatString($user["Email"]) . "'," .
-			   "'" . $this->formatString($user["Work"]) . "'," .
-			   "'" . $this->formatString($user["Mobile"]) . "'," .
-			   "'" . $this->formatString($user["Phone"]) . "'," .
-			   "'" . $this->formatString($user["YahooID"]) . "'," .
-			   "0, " .  //not an admin
-			   "0 " .   //0: registered, 1: confirmed, 2: banned
+			   "'" . $this->formatString($dto->Name) . "'," .
+			   "'" . $this->formatString($dto->Desc) . "'," .
+			   "'" . $this->formatString($dto->Type) . "'," .
+			   "'" . $this->formatString($dto->Multiply) . 
 			   ")";
 
 		$this->executeSqlUpdate($sql);
 		return true;
 	}
+
+	public function updateUser($dto) {
+            $sql = "UPDATE  " .CONFIG::$db_prefix.$dto->_tablename.
+                   "SET " .
+                   "name = '" . $this->formatString($dto["name"]) . "'," .
+                   "desc = '" . $this->formatString($dto["desc"]) . "'," .
+                   "type = '" . $this->formatString($dto["type"]) . "'," .
+                   "multiply = '" . $this->formatString($dto["multiply"]) . "' " .
+                   "WHERE id = " . $dto["id"];
+
+            $this->executeSqlUpdate($sql);
+
+            return true;
+        }
+
+		public function listAll() {
+            $sql = "SELECT id, name, desc, type, multiply FROM " .CONFIG::$db_prefix.$dto->_tablename;
+            return $this->executeSqlQuery($sql);
+        }
 }
 ?>
