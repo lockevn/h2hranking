@@ -13,10 +13,8 @@
         }
         
         protected function executeSqlQuery($sql) {
-            $conn = $this->connectDB();
-            
-            $rows = $this->executeSqlQueryConn($sql, $conn);
-            
+            $conn = $this->connectDB();            
+            $rows = $this->executeSqlQueryConn($sql, $conn);            
             $this->closeDB($conn);
             return $rows;
         }
